@@ -11,15 +11,20 @@ for i in range(n):
         print(arr[i][j],end=" ")
     print()
 m=np.array(arr,int)
-s=input("kiri/kanan:")
-d=input("Berapa Kali :")
-degrees={"1":1,"2":2,"3":3}
-if(s=="kiri" or s=="Kiri" or s=="kIRI"):
-    m=np.rot90(m,degrees[d])
-else:
-    m=np.rot90(m,4-degrees[d])
-print("The Matrix after rotation by the given degree.")
-for i in range(n):
-    for j in range(n):
-        print(m[i][j],end=' ')
-    print()
+again = True
+while again == True:
+    s=input("kiri/kanan:")
+    d=input("Berapa Kali :")
+    degrees={"1":1,"2":2,"3":3}
+    if(s=="kiri" or s=="Kiri" or s=="kIRI"):
+        m=np.rot90(m,degrees[d])
+    else:
+        m=np.rot90(m,4-degrees[d])
+    print("The Matrix after rotation by the given degree.")
+    for i in range(n):
+        for j in range(n):
+            print(m[i][j],end=' ')
+        print()
+    tanya = int(input('1 untuk lanjut, sembarang untuk berhenti : '))
+    if(tanya != 1):
+        break
